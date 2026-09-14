@@ -1,0 +1,12 @@
+# Dependencies and Next.js output
+node_modules/
+.next/
+out/
+
+# Private local configuration — never commit these
+.env.local
+.env*.local
+
+# System/editor files
+.DS_Store
+*.tsbuildinfo
