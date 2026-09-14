@@ -13,6 +13,7 @@ create table public.events (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
   occurred_at timestamptz not null default now(),
+  event_type text not null default 'masturbation' check (event_type in ('masturbation', 'regular_sex', 'oral_sex', 'partner_manual')),
   note text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()

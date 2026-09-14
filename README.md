@@ -21,6 +21,10 @@ Open `http://localhost:3000`. The app uses an automatic anonymous session, so no
 
 Every profile is keyed to `auth.users.id`; every event stores `user_id`. Row Level Security is enabled on both tables and policies only permit a signed-in user to read, create, update, or delete their own records. The browser connects only with the public anon key, which is safe with these RLS policies in place. Anonymous sessions are private to that browser/device; clearing browser data or using another device starts a new private tracker.
 
+## Updating an existing database
+
+For the event-type selector, run [`supabase/migrations/20260913_add_event_type.sql`](./supabase/migrations/20260913_add_event_type.sql) once in the Supabase SQL Editor before deploying the matching app update.
+
 ## Deploy to Vercel
 
 1. Push this `post-vasectomy-tracker` folder to a Git repository, or import it from Vercel with this folder as the project root.
