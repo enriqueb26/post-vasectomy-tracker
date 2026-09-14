@@ -15,11 +15,11 @@ A private, mobile-first PWA for recording post-vasectomy ejaculation events and 
    npm run dev
    ```
 
-Open `http://localhost:3000` and create an account. The database trigger automatically gives each new account the default personal settings.
+Open `http://localhost:3000`. The app uses an automatic anonymous session, so no email or password is needed. In Supabase, enable **Authentication → Settings → Allow anonymous sign-ins** before using it. The database trigger automatically gives each new session the default personal settings.
 
 ## Supabase privacy model
 
-Every profile is keyed to `auth.users.id`; every event stores `user_id`. Row Level Security is enabled on both tables and policies only permit a signed-in user to read, create, update, or delete their own records. The browser connects only with the public anon key, which is safe with these RLS policies in place.
+Every profile is keyed to `auth.users.id`; every event stores `user_id`. Row Level Security is enabled on both tables and policies only permit a signed-in user to read, create, update, or delete their own records. The browser connects only with the public anon key, which is safe with these RLS policies in place. Anonymous sessions are private to that browser/device; clearing browser data or using another device starts a new private tracker.
 
 ## Deploy to Vercel
 
